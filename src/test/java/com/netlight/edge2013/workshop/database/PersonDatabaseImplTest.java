@@ -24,7 +24,7 @@ public class PersonDatabaseImplTest {
 	@Test
 	public void databaseRoundtrip(){
 		final List<Person> actualPersons = personDatabase.getAllPersonsByName();
-		assertEquals("All persons should be listed", TestPersons.ALL, actualPersons);
+		assertEquals("All persons should be listed", TestPersons.BY_NAME, actualPersons);
 
 		final Person expected = personDatabase.getPerson(TestPersons.WALDORF_EMAIL);
 		assertEquals("Should be waldorf", TestPersons.WALDORF, expected);
@@ -38,7 +38,7 @@ public class PersonDatabaseImplTest {
 	
 	@Test
 	public void youngestFirst(){
-		final List<Person> youngestFirst = Arrays.asList(TestPersons.WALDORF, TestPersons.STATLER);
+		final List<Person> youngestFirst = Arrays.asList( TestPersons.WALDORF, TestPersons.STATLER);
 		assertEquals("Waldorf then Statler", youngestFirst, personDatabase.getAllPersonsByAge(true));
 	}
 	

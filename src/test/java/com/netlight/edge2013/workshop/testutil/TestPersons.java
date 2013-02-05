@@ -11,6 +11,5 @@ public class TestPersons {
 	public static final String STATLER_EMAIL = "statler@muppets.com";
 	public static  final Person STATLER = Person.valueOf("Statler", "Muppet", 91, STATLER_EMAIL);
 	public static final Person WALDORF = Person.valueOf("Waldorf", "Muppet", 87, WALDORF_EMAIL);
-	public static final List<Person> ALL = Arrays.asList(STATLER, WALDORF);
-
+	public static final List<Person> BY_NAME = Arrays.asList(STATLER, WALDORF);
 }
