@@ -14,6 +14,10 @@ public class Person implements Comparable<Person>{
 		this.email = email;
 	}
 	
+	public int getAge(){
+		return age;
+	}
+	
 	public String getEmail() {
 		return email;
 	}

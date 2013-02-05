@@ -21,13 +21,13 @@ public class PersonServiceImplTest {
 	
 	@Before
 	public void setUp(){
-		when(personDatabase.getAllPersons()).thenReturn(TestPersons.ALL);
+		when(personDatabase.getAllPersonsByName()).thenReturn(TestPersons.ALL);
 		when(personDatabase.getPerson(eq(TestPersons.STATLER_EMAIL))).thenReturn(TestPersons.STATLER);
 	}
 
 	@Test
 	public void getPersons(){
-		List<Person> actualPersons = personService.getAllPersons();
+		List<Person> actualPersons = personService.getAllPersonsByName();
 		assertEquals("Same persons", TestPersons.ALL, actualPersons);
 	}
 

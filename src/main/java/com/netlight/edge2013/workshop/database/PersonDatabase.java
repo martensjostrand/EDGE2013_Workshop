@@ -5,7 +5,8 @@ import java.util.List;
 import com.netlight.edge2013.workshop.domain.Person;
 
 public interface PersonDatabase {
-	List<Person> getAllPersons();
+	List<Person> getAllPersonsByAge(boolean youngestFirst);
+	List<Person> getAllPersonsByName();
 	Person getPerson(String email);
 	void addPerson(Person person);
 }

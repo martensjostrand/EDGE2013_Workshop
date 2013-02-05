@@ -14,10 +14,15 @@ public class PersonServiceImpl implements PersonService{
 	}
 
 	@Override
-	public List<Person> getAllPersons() {
-		return personDatabase.getAllPersons();
+	public List<Person> getAllPersonsByName() {
+		return personDatabase.getAllPersonsByName();
 	}
 
+	@Override
+	public List<Person> getAllPersonsByAge(boolean youngestFirst) {
+		return personDatabase.getAllPersonsByAge(youngestFirst);
+	}
+	
 	@Override
 	public Person getPerson(String email) {
 		return personDatabase.getPerson(email);
