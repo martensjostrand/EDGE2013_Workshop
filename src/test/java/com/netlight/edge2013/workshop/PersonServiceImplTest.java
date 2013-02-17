@@ -51,6 +51,6 @@ public class PersonServiceImplTest {
 	@Test
 	public void printStats(){
 		String stats = personService.printStats();
-		System.out.println(stats);
+		assertEquals("Start of stats\n- Really old person\n- Really old person\nEnd of stats\n", stats);
 	}
 }
