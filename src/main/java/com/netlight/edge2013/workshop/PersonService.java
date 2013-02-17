@@ -9,4 +9,5 @@ public interface PersonService {
 	List<Person> getAllPersonsByAge(boolean youngestFirst);
 	Person getPerson(String email);
 	void addPerson(Person person);
+ 	String printStats();
 }

@@ -1,10 +1,9 @@
 package com.netlight.edge2013.workshop.domain;
 
-public class Person implements Comparable<Person>{
-	
+public class Person implements Comparable<Person> {
 	private final String firstName;
 	private final String lastName;
-	private  final int age; 
+	private  final int age;
 	private final String email;
 
 	private Person(String firstName, String lastName, int age, String email) {
@@ -13,11 +12,11 @@ public class Person implements Comparable<Person>{
 		this.age = age;
 		this.email = email;
 	}
-	
+
 	public int getAge(){
 		return age;
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
@@ -28,15 +27,15 @@ public class Person implements Comparable<Person>{
 		if(result == 0){
 			result = this.firstName.compareTo(that.firstName);
 		}
-		
+
 		if(result == 0){
 			result = this.age - that.age;
 		}
-		
+
 		if(result == 0){
-			result = this.email.compareTo(that.email); 
+			result = this.email.compareTo(that.email);
 		}
-		
+
 		return result;
 	}
 
@@ -89,7 +88,4 @@ public class Person implements Comparable<Person>{
 			return false;
 		return true;
 	}
-	
-	
-
 }

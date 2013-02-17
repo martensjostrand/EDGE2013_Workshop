@@ -18,11 +18,10 @@ import com.netlight.edge2013.workshop.domain.Person;
 import com.netlight.edge2013.workshop.testutil.TestPersons;
 
 public class PersonServiceImplTest {
-
 	private final PersonDatabase personDatabase = mock(PersonDatabase.class);
-	private final PersonService personService = new PersonServiceImpl(personDatabase); 
+	private final PersonService personService = new PersonServiceImpl(personDatabase);
 	private final List<Person> expectedPersons = TestPersons.BY_NAME;
-	
+
 	@Before
 	public void setUp(){
 		when(personDatabase.getAllPersonsByName()).thenReturn(expectedPersons);
@@ -42,11 +41,16 @@ public class PersonServiceImplTest {
 		assertEquals("Same persons", expectedPersons, actualPersons);
 		verify(personDatabase).getAllPersonsByAge(true);
 	}
-	
+
 	@Test
 	public void getPerson(){
 		Person actual = personService.getPerson(TestPersons.STATLER_EMAIL);
 		assertEquals("Should be statler", TestPersons.STATLER, actual);
 	}
 
+	@Test
+	public void printStats(){
+		String stats = personService.printStats();
+		System.out.println(stats);
+	}
 }
